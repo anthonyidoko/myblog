@@ -1,0 +1,7 @@
+{%extends "home.html"%}
+{%block title%}<h2>TOPICS</h2>{%endblock title%}
+{%block content%}
+{%for article in articles%}
+<p><a href="/article/{{article.id}}">{{article.title}}</a></p>
+{%endfor%}
+{%endblock content%}
