@@ -1,8 +1,15 @@
 {%extends "home.html"%}
-{%block title%}<h2>{{article.title|upper}}</h2>{%endblock title%}
+{%block title%}<h2>{{article.title|upper}}</h2><br><br>{%endblock title%}
 <!--({{article.author}})<br>-->
 {%block content%}{%for entry in entries%}
 <p>{{entry.text}}</p>
-<img src="media/images/{{entry.photo}}" alt= {{entry.photo_description}}>
+
+
+<div class="card" style="width: 18rem;">
+    <img src="{{entry.photo.url}}" class="card-img-top" alt="{{entry.photo_description}}">
+    <div class="card-body">
+        <p class="card-text">{{entry.photo_description}}</p>
+    </div>
+</div>
 {%endfor%}
 {%endblock content%}
